@@ -1,8 +1,26 @@
 <div id='links' ng-controller="LinksController as linkCtrl">
   <h1>links</h1>
   <div>
+    <div class='navigation'>
+      <ul>
+        <li><a href='#/links' class='index'>All Links</a></li>
+        <li><a href='#/shorten' class='create'>Shorten</a></li>
+        <li><a href='#/logout' class='logout'>Logout</a></li>
+      </ul>
+    </div>
+    <div>
+      <input type='text' ng-model='searchString' placeholder='Enter your search terms'>
+   </div>
     <ul>
-      <li ng-repeat='link in data.links track by $index'>{{link.url}}&nbsp&nbsp{{link.visits}}</li>
+      <li ng-repeat="link in data.links | filter:searchString | orderBy:'-visits'" >
+        <div class='link'>
+          <div class='visits'>
+            <span class='count'><font size='+4'>{{link.visits}}</font><br/></span>Visits
+          </div>
+          <span ><strong><font size="+2">{{link.url}}</font></strong></span><br/></span>
+          <a href="{{link.baseUrl}}/{{link.code}}"><i>{{link.baseUrl}}/{{link.code}}</i></a>
+        </div>
+      </li>
     </ul>
   </div>
   <!-- Your html here -->

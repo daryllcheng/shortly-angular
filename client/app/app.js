@@ -23,10 +23,10 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
-    .otherwise('/signin', {
-      templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
-    });
+    .otherwise('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    })
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls

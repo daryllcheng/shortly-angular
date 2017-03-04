@@ -60,7 +60,7 @@ module.exports = {
         if (!link) {
           return next(new Error('Link not added yet'));
         }
-
+        console.log("MADE IT HERE");
         link.visits++;
         link.save(function (err, savedLink) {
           if (err) {
