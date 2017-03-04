@@ -1,4 +1,10 @@
-<div id='container'>
+<div id='shorten' ng-controller="ShortenController as shortenCtrl">
+<h1>shorten</h1>
+<form name="shortenForm" >
+    <input type='text' ng-model='url'>
+    <button ng-click='addLink(url)'>add</button>
+  </form>
+ 
 <!-- Your code here -->
 
 </div>

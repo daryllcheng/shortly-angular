@@ -1,3 +1,21 @@
-<div id='container'>
+<div id='links' ng-controller="LinksController as linkCtrl">
+  <h1>links</h1>
+  <div>
+    <ul>
+      <li ng-repeat='link in data.links track by $index'>{{link.url}}&nbsp&nbsp{{link.visits}}</li>
+    </ul>
+  </div>
   <!-- Your html here -->
 </div>
+
+
+<!-- <div id='signin'>
+  <h1>signin</h1>
+  <form name="signinForm" ng-submit='signin()'>
+    <input type='text'ng-model='user.username'>
+    <input type="password" ng-model='user.password'>
+    <button>signin</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+</div>
+ -->

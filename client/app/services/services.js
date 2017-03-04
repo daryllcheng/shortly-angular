@@ -8,21 +8,18 @@ angular.module('shortly.services', [])
         url: '/api/links'
       })
       .then(function (resp) {
-        console.log("THIS IS RESP.DATA ", resp.data );
         return resp.data
 
       })
     },
     
     addOne: function(link){
-      console.log('THIS IS THE PASSED IN URL:', link);
       return $http({
         method: 'POST',
         url: '/api/links',
-        data: link
-      })
+        data: { url: link}
+        })
       .then(function (resp) {
-        console.log('THIS IS THE PASSED IN RESP', resp);
         return resp
       })
     }
